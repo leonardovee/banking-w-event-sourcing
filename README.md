@@ -10,7 +10,7 @@ there." [[1]](#references)
 these events, we can also use the event log to reconstruct past states, and as a foundation to automatically adjust the
 state to cope with retroactive changes." [[1]](#references)
 
-![Diagram of the projects architecture](./architecture.svg)
+![Diagram of the projects architecture](./architecture.png)
 
 ### Commands
 
