@@ -24,12 +24,14 @@ Here are the possible commands for the application:
 
 ### Queries
 
-Here are the possible commands for the application:
+Here are the possible queries for the application:
 
 - bank-account-lookup
 - bank-account-lookup/by-id/{id}
 - bank-account-lookup/by-holder/{holder}
 - bank-account-lookup/with-balance/{equality}/{balance}
+
+You can see more of the commands and queries in the file `requests.http`.
 
 ### Requests
 
