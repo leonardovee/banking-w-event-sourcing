@@ -4,7 +4,7 @@ services:
   mongodb:
     image: mongo:5.0
     ports:
-      - 27017:27017
+      - "27017:27017"
     environment:
       - MONGO_INITDB_ROOT_USERNAME=bank_account
       - MONGO_INITDB_ROOT_PASSWORD=bank_account
@@ -13,9 +13,7 @@ services:
     image: mysql
     platform: linux/amd64
     ports:
-      - 3306:3306
-        #    volumes:
-      #      - ./mariadb:/var/lib/mysql
+      - "3306:3306"
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_PASSWORD=bank_account
@@ -31,6 +29,7 @@ services:
       - "zookeeper_data:/bitnami"
     environment:
       - ALLOW_ANONYMOUS_LOGIN=yes
+
   kafka:
     image: bitnami/kafka
     ports:

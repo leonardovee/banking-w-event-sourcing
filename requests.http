@@ -1,0 +1,64 @@
+###
+
+# Open Bank Account
+POST http://localhost:5005/api/v1/open-bank-account
+Content-Type: application/json
+
+{
+  "accountHolder": "Leonardo Vieira",
+  "accountType": "SAVINGS",
+  "openingBalance": 15.00
+}
+
+###
+
+# Deposit Funds
+PUT http://localhost:5005/api/v1/deposit-funds/cbe96e58-822a-47d8-8797-90d9455a4582
+Content-Type: application/json
+
+{
+  "amount": 20.00
+}
+
+###
+
+# Withdraw Funds
+PUT http://localhost:5005/api/v1/withdraw-funds/27794ca2-de70-46bd-b8e9-4b8a06e19eb3
+Content-Type: application/json
+
+{
+  "amount": 20.00
+}
+
+###
+
+# Close Bank Account
+DELETE http://localhost:5005/api/v1/close-bank-account/e7916d20-2157-4eb3-ad6e-735b61e12455
+
+###
+
+# Bank Account Lookup
+GET http://localhost:5001/api/v1/bank-account-lookup/
+
+###
+
+# Bank Account Lookup By Id
+GET http://localhost:5001/api/v1/bank-account-lookup/by-id/cbe96e58-822a-47d8-8797-90d9455a4582
+
+###
+
+# Bank Account Lookup By Holder
+GET http://localhost:5001/api/v1/bank-account-lookup/by-holder/Leonardo%20Vieira
+
+###
+
+# Bank Account Lookup With Balance Greater Than
+GET http://localhost:5001/api/v1/bank-account-lookup/with-balance/GREATER_THAN/5
+
+###
+
+# Restore Read DB
+POST http://localhost:5005/api/v1/restore-read-db
+
+###
+

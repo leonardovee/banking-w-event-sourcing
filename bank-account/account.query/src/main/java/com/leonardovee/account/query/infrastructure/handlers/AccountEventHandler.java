@@ -26,6 +26,7 @@ public class AccountEventHandler implements EventHandler {
         if (bankAccount.isEmpty()) {
             return;
         }
+        // TODO: make this a UPDATE directly on the database instead of fetching the current value.
         var currentBalance = bankAccount.get().getBalance();
         var latestBalance = currentBalance + event.getAmount();
         bankAccount.get().setBalance(latestBalance);
