@@ -26,7 +26,7 @@ public class RestoreReadDbController {
     public ResponseEntity<BaseResponse> restoreReadDb() {
         try {
             commandDispatcher.send(new RestoreReadDbCommand());
-            return new ResponseEntity<>(new BaseResponse("Read database restore request completed successfully!"), HttpStatus.CREATED);
+            return new ResponseEntity<>(new BaseResponse("Database restored"), HttpStatus.OK);
         } catch (IllegalStateException e) {
             logger.log(Level.WARNING, MessageFormat.format("Client made a bad request - {0}.", e.toString()));
             return new ResponseEntity<>(new BaseResponse(e.toString()), HttpStatus.BAD_REQUEST);

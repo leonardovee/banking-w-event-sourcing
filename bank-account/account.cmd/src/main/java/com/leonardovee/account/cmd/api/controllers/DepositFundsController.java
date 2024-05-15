@@ -27,7 +27,7 @@ public class DepositFundsController {
         try {
             command.setId(id);
             commandDispatcher.send(command);
-            return new ResponseEntity<>(new OpenAccountResponse("Deposit funds request completed successfully!", id), HttpStatus.OK);
+            return new ResponseEntity<>(new OpenAccountResponse("Funds deposited", id), HttpStatus.OK);
         } catch (IllegalStateException | AggregateNotFoundException e) {
             logger.log(Level.WARNING, MessageFormat.format("Client made a bad request - {0}.", e.toString()));
             return new ResponseEntity<>(new BaseResponse(e.toString()), HttpStatus.BAD_REQUEST);

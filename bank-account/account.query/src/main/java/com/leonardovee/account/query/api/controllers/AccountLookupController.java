@@ -36,10 +36,10 @@ public class AccountLookupController {
             if (accounts == null || accounts.size() == 0) {
                 return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
             }
-            var response = AccountLookupResponse.builder().accounts(accounts).message(MessageFormat.format("Successfully returned {0} bank account(s).", accounts.size())).build();
+            var response = AccountLookupResponse.builder().accounts(accounts).message(MessageFormat.format("{0} bank account(s) found", accounts.size())).build();
             return new ResponseEntity<>(response, HttpStatus.OK);
         } catch (Exception e) {
-            var safeErrorMessage = "Failed to complete get all accounts request!";
+            var safeErrorMessage = "Oops, something wrong happened";
             logger.log(Level.SEVERE, safeErrorMessage, e);
             return new ResponseEntity<>(new AccountLookupResponse(safeErrorMessage), HttpStatus.INTERNAL_SERVER_ERROR);
         }
@@ -52,10 +52,10 @@ public class AccountLookupController {
             if (accounts == null || accounts.size() == 0) {
                 return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
             }
-            var response = AccountLookupResponse.builder().accounts(accounts).message("Successfully returned bank account.").build();
+            var response = AccountLookupResponse.builder().accounts(accounts).message("Here is the bank account requested").build();
             return new ResponseEntity<>(response, HttpStatus.OK);
         } catch (Exception e) {
-            var safeErrorMessage = "Failed to complete get account by id request!";
+            var safeErrorMessage = "Oops, something wrong happened";
             logger.log(Level.SEVERE, safeErrorMessage, e);
             return new ResponseEntity<>(new AccountLookupResponse(safeErrorMessage), HttpStatus.INTERNAL_SERVER_ERROR);
         }
@@ -68,10 +68,10 @@ public class AccountLookupController {
             if (accounts == null || accounts.size() == 0) {
                 return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
             }
-            var response = AccountLookupResponse.builder().accounts(accounts).message("Successfully returned bank account.").build();
+            var response = AccountLookupResponse.builder().accounts(accounts).message("Here is the bank account requested").build();
             return new ResponseEntity<>(response, HttpStatus.OK);
         } catch (Exception e) {
-            var safeErrorMessage = "Failed to complete get account by holder request!";
+            var safeErrorMessage = "Oops, something wrong happened";
             logger.log(Level.SEVERE, safeErrorMessage, e);
             return new ResponseEntity<>(new AccountLookupResponse(safeErrorMessage), HttpStatus.INTERNAL_SERVER_ERROR);
         }
@@ -84,10 +84,10 @@ public class AccountLookupController {
             if (accounts == null || accounts.size() == 0) {
                 return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
             }
-            var response = AccountLookupResponse.builder().accounts(accounts).message(MessageFormat.format("Successfully returned {0} bank account(s).", accounts.size())).build();
+            var response = AccountLookupResponse.builder().accounts(accounts).message(MessageFormat.format("{0} bank account(s) returned", accounts.size())).build();
             return new ResponseEntity<>(response, HttpStatus.OK);
         } catch (Exception e) {
-            var safeErrorMessage = "Failed to complete get accounts with balance request!";
+            var safeErrorMessage = "Oops, something wrong happened";
             logger.log(Level.SEVERE, safeErrorMessage, e);
             return new ResponseEntity<>(new AccountLookupResponse(safeErrorMessage), HttpStatus.INTERNAL_SERVER_ERROR);
         }

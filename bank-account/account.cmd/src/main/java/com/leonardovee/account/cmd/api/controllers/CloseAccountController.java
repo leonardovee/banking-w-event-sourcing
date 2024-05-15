@@ -28,7 +28,7 @@ public class CloseAccountController {
     public ResponseEntity<BaseResponse> closeAccount(@PathVariable(value = "id") String id) {
         try {
             commandDispatcher.send(new CloseAccountCommand(id));
-            return new ResponseEntity<>(new BaseResponse("Bank account closure request successfully completed!"), HttpStatus.OK);
+            return new ResponseEntity<>(HttpStatus.ACCEPTED);
         } catch (IllegalStateException | AggregateNotFoundException e) {
             logger.log(Level.WARNING, MessageFormat.format("Client made a bad request - {0}.", e.toString()));
             return new ResponseEntity<>(new BaseResponse(e.toString()), HttpStatus.BAD_REQUEST);
